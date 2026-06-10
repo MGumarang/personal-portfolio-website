@@ -67,7 +67,7 @@ body {
 .hero {
     text-align: center;
     padding: 60px 20px;
-    background: linear-gradient(rgba(31, 41, 55, 0.85), rgba(77, 115, 146, 0.85));
+    background: linear-gradient(rgba(44, 59, 80, 0.85), rgba(58, 94, 122, 0.85));
     color: #eeeeee;
     border-radius: 12px;
     margin-bottom: 30px;
@@ -91,7 +91,7 @@ body {
 
 /* Content cards */
 .card {
-    background: linear-gradient(rgba(186, 207, 255, 0.85), rgba(226, 230, 240, 0.85));
+    background: linear-gradient(rgba(44, 59, 80, 0.85), rgba(58, 94, 122, 0.85));
     padding: 25px;
     margin-bottom: 20px;
     border-radius: 12px;
@@ -100,15 +100,15 @@ body {
 
 .card h2 {
     margin-bottom: 15px;
-    color: #1f2937;
+    color: #cbd5e1;
     text-align: center;
-    font-size: 1.8rem;
+    font-size: 2.1rem;
 }
 
 .card #mission-statement {
     font-size: 1.2rem;
     text-align: center;
-    color: #4b5563;
+    color: #c9e1ff;
 }
 
 /* Skills list */
@@ -122,10 +122,10 @@ body {
 
 .skills-list li {
     font-size: 1.4rem;
-    background-color: #e4ecff;
+    background-color: #c0cce9;
     padding: 10px;
     border-radius: 6px;
-    color: #4b5563;
+    color: #2a394e;
     display: flex;
     align-items: center;
     gap: 14px;
@@ -140,6 +140,6 @@ body {
     font-size: 1.2rem;
     margin-bottom: 15px;
     line-height: 1.6;
-    color: #4b5563;
+    color: #c9e1ff;
     text-align: center;
 }
