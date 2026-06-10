@@ -7,7 +7,7 @@
 }
 
 nav {
-    background-color: #1f2937;
+    background-color:#1f2937;
     padding: 15px;
     position: fixed;
     top: 0;
@@ -24,8 +24,9 @@ nav ul {
 
 nav a {
     display: inline-block;
-    color: #cbd5e1;
+    color: #d7e2f0;
     text-decoration: none;
+    font-size: 1.2rem;
     font-weight: bold;
     padding: 5px 10px;
     background-color: #476aa1;
