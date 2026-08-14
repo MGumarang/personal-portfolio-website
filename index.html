@@ -2,16 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Personal Site</title>
   <link rel="stylesheet" href="style.css">
+
+  <!-- Web app capable meta tags -->
+   <meta name="apple-mobile-web-app-capable" content="yes" />
+   <meta name="mobile-web-app-capable" content="yes">
+   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+   <meta name="apple-mobile-web-app-title" content="My Personal Site" />
+
+   <link rel="apple-touch-icon" href="img/css-icon.png" />
+   <link rel="manifest" href="manifest.json" />
+
 </head>
 
 <body>
 
   <!-- Add your HTML content here -->
    <!-- Navigation Bar -->
-    <nav class="navbar">
-      <ul>
+    <nav class="navbar" id="site-nav">
+      <button
+        class="hamburger toggle"
+        id="hamburger"
+        type="button"
+        aria-label="Toggle navigation menu"
+        aria-controls="nav-links"
+        aria-expanded="false"
+      >&#9776;</button>
+      <ul class="nav-links" id="nav-links">
           <li><a href="#home">Home</a></li>
           <li><a href="#mission">My Mission</a></li>
           <li><a href="#skills">Skills</a></li>
@@ -76,10 +95,47 @@
     <section class="card" id="projects">
       <h2>Projects</h2>
       <ul class="projects-list">
-        <li><a href="https://mgumarang.github.io/project3-intel-website-localization/" target="_blank">Intel Website Localization</a></li>
-        <li><a href="https://mgumarang.github.io/project6-charity-water-game-finished/" target="_blank">Beyond the Tap</a></li>
-        <li><a href="https://mgumarang.github.io/project7-nasa-space-explorer/" target="_blank">NASA Space Explorer</a></li>
-        <li><a href="https://mgumarang.github.io/project8-loreal-chatbot/" target="_blank">L'Oréal Chatbot</a></li>
+        <li>
+          <img src="project-imgs/intel-localization.png" alt="Intel Website Localization Project Screenshot">
+          <h3>Intel Website Localization</h3>
+          <p class="project-description">A project to localize the Intel website to be accessible for different screens and languages.</p>
+          <a href="https://mgumarang.github.io/project3-intel-website-localization/" target="_blank">Check It Out! &#8599;</a>
+        </li>
+
+        <li>
+          <img src="project-imgs/intel-check-in.png" alt="Intel Summit Check-In Project Screenshot">
+          <h3>Intel Summit Check-In</h3>
+          <p class="project-description">A project to create a check-in system for the Intel Summit.</p>
+          <a href="https://mgumarang.github.io/project5-intel-event-check-in/" target="_blank">Check It Out! &#8599;</a>
+        </li>
+
+        <li>
+          <img src="project-imgs/beyond-the-tap.png" alt="Beyond the Tap Project Screenshot">
+          <h3>Beyond the Tap</h3>
+          <p class="project-description">A project to create a web game for charity: water, which aims to raise awareness about the importance of clean water.</p>
+          <a href="https://mgumarang.github.io/project6-charity-water-game-finished/" target="_blank">Check It Out! &#8599;</a>
+        </li>
+
+        <li>
+          <img src="project-imgs/nasa-space-explorer.png" alt="NASA Space Explorer Project Screenshot">
+          <h3>NASA Space Explorer</h3>
+          <p class="project-description">A project to create a web application that uses NASA's API to allow users to explore NASA's space missions and learn about the universe.</p>
+          <a href="https://mgumarang.github.io/project7-nasa-space-explorer/" target="_blank">Check It Out! &#8599;</a>
+        </li>
+        
+        <li>
+          <img src="project-imgs/loreal-chatbot.png" alt="L'Oréal Chatbot Project Screenshot">
+          <h3>L'Oréal Chatbot</h3>
+          <p class="project-description">A project to create a chatbot for L'Oréal that can answer customer questions and provide product recommendations.</p>
+          <a href="https://mgumarang.github.io/project8-loreal-chatbot/" target="_blank">Check It Out! &#8599;</a>
+        </li>
+        
+        <li>
+          <img src="project-imgs/routine-builder.png" alt="L'Oréal Routine Builder Project Screenshot">
+          <h3>L'Oréal Routine Builder</h3>
+          <p class="project-description">A project to create a web application that allows users to build their own skincare routine using L'Oréal products.</p>
+          <a href="https://mgumarang.github.io/project9-loreal-routine-builder/" target="_blank">Check It Out! &#8599;</a>
+        </li>
       </ul>
     </section>
 
@@ -89,5 +145,33 @@
 
       <p><b>University Email:</b> gumarm1@unlv.nevada.edu</p>
     </section>
+
+    <!-- Script for Hamburger Menu Toggle -->
+    <script>
+      const hamburgerButton = document.getElementById("hamburger");
+      const siteNav = document.getElementById("site-nav");
+      const navLinks = document.querySelectorAll("#nav-links a");
+
+      hamburgerButton.addEventListener("click", function () {
+        const isOpen = siteNav.classList.toggle("open");
+        hamburgerButton.setAttribute("aria-expanded", String(isOpen));
+      });
+
+      navLinks.forEach(function (link) {
+        link.addEventListener("click", function () {
+          siteNav.classList.remove("open");
+          hamburgerButton.setAttribute("aria-expanded", "false");
+        });
+      });
+    </script>
+
+    <!-- Register the service worker -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then((registration) => console.log('Service Worker registered'))
+          .catch((error) => console.log('Service Worker registration failed:', error));
+      }
+    </script>
   </body>
 </html>
